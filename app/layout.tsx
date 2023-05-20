@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Atkinson_Hyperlegible, Merriweather } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const atkinson = Atkinson_Hyperlegible({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${atkinson.variable} ${merriweather.variable} font-sans`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
