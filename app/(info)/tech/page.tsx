@@ -117,7 +117,7 @@ export default function TechPage() {
         {tech.map((item, idx) => (
           <div
             key={idx}
-            className="grid grid-cols-[4rem_1fr] items-center gap-4 transition transform duration-[50ms] hover:scale-[1.005] bg-white/5 border border-neutral-800 hover:border-neutral-500 rounded-md overflow-hidden"
+            className="grid grid-cols-[4rem_1fr] grid-rows-1 items-center gap-4 transition transform duration-[50ms] hover:scale-[1.005] bg-white/5 border border-neutral-800 hover:border-neutral-500 rounded-md overflow-hidden"
           >
             <div
               className="grow flex items-center justify-center text-white h-full py-2"

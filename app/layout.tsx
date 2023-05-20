@@ -23,6 +23,7 @@ export const metadata = {
   description: "Hunter Lovell - Software Engineer",
   keywords:
     "hntrl, Hunter Lovell, Hunter, Lovell, web developer, backend developer, fullstack developer, fullstack, software, github, backend, hyper",
+  themeColor: "#000000",
   robots: {
     index: true,
     follow: true,
@@ -38,13 +39,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${atkinson.variable} ${merriweather.variable} font-sans`}
-      >
-        {children}
-        <Analytics />
-      </body>
+    <html
+      lang="en"
+      className={`${atkinson.variable} ${merriweather.variable} font-sans`}
+    >
+      {children}
+      <Analytics />
     </html>
   );
 }

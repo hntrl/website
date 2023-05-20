@@ -19,7 +19,7 @@ async function TrackCard() {
         rel="noopener noreferrer"
         target="_blank"
         href="https://open.spotify.com/user/26agyt9ay747kshc3h5fmj5gj?si=07c94963b3a44236"
-        className="group flex items-center w-fit max-w-sm transition transform duration-[50ms] hover:scale-[1.005] border border-slate-900 hover:border-gray-400 rounded-sm overflow-hidden"
+        className="group inline-flex align-middle items-center w-fit max-w-sm transition transform duration-[50ms] hover:scale-[1.005] border border-slate-900 hover:border-gray-400 rounded-sm overflow-hidden"
       >
         <Image
           src={track.item.album.images[0].url}
@@ -47,7 +47,7 @@ async function RapidText() {
   return (
     <GenericLink
       href={`https://chess.com/member/${process.env.CHESS_USERNAME}`}
-      className="flex gap-1 items-center font-semibold text-white"
+      className="inline-flex align-top gap-1 items-center font-semibold text-white"
     >
       <ChessRapid className="w-4 text-[#6d9b49]" />
       {rapid.stats.rating_max}
@@ -62,7 +62,7 @@ async function RankText() {
       href={`https://tracker.gg/valorant/profile/riot/${encodeURIComponent(
         process.env.VAL_USERNAME || ""
       )}/overview`}
-      className="flex gap-1 items-center font-semibold text-white"
+      className="inline-flex align-top gap-1 items-center font-semibold text-white"
     >
       <Image
         src={rank.images.large}
@@ -98,26 +98,26 @@ export default async function ExtrasPage() {
         <GenericLink href="https://github.com/hntrl">GitHub</GenericLink>
       </li>
       <div className="h-px w-full my-4 bg-gray-100/30" />
-      <div className="grid grid-rows-3 gap-2">
-        <div className="flex items-center gap-1">
+      <div className="mt-6">
+        <div className="mb-3.5">
           currently{" "}
-          <Suspense fallback={<LoadingIcon />}>
+          <Suspense fallback={<LoadingIcon className="inline" />}>
             {/* @ts-expect-error Async Server Component */}
             <RankText />
-          </Suspense>
+          </Suspense>{" "}
           in Valorant
         </div>
-        <div className="flex items-center gap-1">
+        <div className="mb-2">
           currently rated{" "}
-          <Suspense fallback={<LoadingIcon />}>
+          <Suspense fallback={<LoadingIcon className="inline" />}>
             {/* @ts-expect-error Async Server Component */}
             <RapidText />
-          </Suspense>
+          </Suspense>{" "}
           in Chess (play me some time!)
         </div>
-        <div className="flex items-center gap-1 h-8 whitespace-nowrap">
-          currently listening to
-          <Suspense fallback={<LoadingIcon />}>
+        <div className="min-h-[2.25rem] leading-9 align-middle mb-2">
+          currently listening to{" "}
+          <Suspense fallback={<LoadingIcon className="inline" />}>
             {/* @ts-expect-error Async Server Component */}
             <TrackCard />
           </Suspense>

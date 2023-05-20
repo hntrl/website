@@ -4,6 +4,7 @@ import { ExternalLink } from "~/components/icons";
 
 export const metadata = {
   title: "Resume",
+  themeColor: "#f7f5f2",
   robots: {
     index: false,
   },
@@ -16,7 +17,7 @@ function Spacer() {
 export default function ResumePage() {
   return (
     <main className="resume min-h-screen">
-      <div className="pt-4 px-4 pb-80 max-w-3xl mx-auto">
+      <div className="pt-4 px-4 pb-40 max-w-3xl mx-auto">
         <Link href="/" className="block font-mono text-sm mb-4 hover:underline">
           ../
         </Link>
@@ -127,7 +128,7 @@ const experience = {
       timeframe: "June 2021 - August 2022",
       link: "cubbys.co",
       content: (
-        <ul className="list-disc">
+        <ul className="list-disc ml-4 md:ml-0">
           <li>
             Implemented practices for data collection and warehousing for all
             past-and-present organizational data.
@@ -173,7 +174,7 @@ const experience = {
       role: "Lead Developer & Architect",
       tag: "Client project",
       content: (
-        <ul className="list-disc">
+        <ul className="list-disc ml-4 md:ml-0">
           <li>
             Built a custom e-commerce storefront for a local made-to-order
             sticker print shop. Project involved the customer website, the
@@ -193,7 +194,7 @@ const experience = {
       role: "Developer",
       tag: "Business venture",
       content: (
-        <ul className="list-disc">
+        <ul className="list-disc ml-4 md:ml-0">
           <li>
             Worked with other founding members to develop strategies for
             building a suite of tools for events at local high schools.
