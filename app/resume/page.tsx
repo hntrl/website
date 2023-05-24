@@ -1,3 +1,5 @@
+import { MdOutlineMail } from "react-icons/md";
+import { CgWebsite } from "react-icons/cg";
 import Link from "next/link";
 
 import { twMerge as cs } from "tailwind-merge";
@@ -29,16 +31,30 @@ export default function ResumePage() {
         <section>
           <div className="flex justify-between items-center mb-4">
             <div>
-              <h1 className="font-display text-4xl font-bold">Hunter Lovell</h1>
-              <div className="text-xl">hunter@hntrl.io</div>
+              <div className="flex items-center gap-3">
+                <h1 className="font-display text-4xl font-bold">
+                  Hunter Lovell
+                </h1>
+                <div className="text-2xl hidden print:block">
+                  /<span className="ml-2">Fullstack Software Engineer</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 text-xl">
+                <MdOutlineMail className="hidden print:block" />
+                hunter@hntrl.io
+              </div>
+              <div className="hidden print:flex items-center gap-2 text-xl">
+                <CgWebsite className="hidden print:block" />
+                hntrl.io
+              </div>
             </div>
           </div>
           <p className="mb-4">
-            Experienced Software Engineer with over 4+ years of comprehensive
-            technical experience in full-stack development. problem-solving
-            skills, committment to follow through, and a focused attention to
-            detail. Also well versed in optimizing business procedures,
-            processess, and productivity.
+            Adaptable software engineer with 4+ years experience providing
+            first-class results that perform. Comprehensive technical experience
+            in full-stack development, problem-solving skills, committment to
+            follow through, and a focused attention to detail. Also well versed
+            in optimizing business procedures, processess, and productivity.
           </p>
           <Spacer />
         </section>
@@ -137,14 +153,6 @@ const experience = {
       content: (
         <ul className="list-disc ml-4 md:ml-0 ">
           <li>
-            Implemented practices for data collection and warehousing for all
-            past-and-present organizational data.
-          </li>
-          <li>
-            Became the pointman for answering all data-intensive questions that
-            arised from senior management and the c-suite.
-          </li>
-          <li>
             Conducted several platform migrations for critical business services
             including payroll providers, reporting workflows, point of sale
             solutions, and other customer facing implements.
@@ -154,11 +162,20 @@ const experience = {
             locations and 300+ employees. Achieved this by building a data
             pipeline across multiple platforms that ensured compliance and
             accuracy, and was directly involved in making sure everyone got paid
-            on time and corerectly.
+            on time and correctly.
+          </li>
+          <li>
+            Increased labor efficiency by 8% in-store and up to 60% in
+            administrative processes through new software development and
+            implementations through collaboration with internal stakeholders.
           </li>
           <li>
             Developed, optimized, and oversaw administrative processes like
             sales reporting, asset management, and payroll.
+          </li>
+          <li>
+            Became the pointman for answering all data-intensive questions that
+            arised from senior management and the c-suite.
           </li>
           <li>
             Became a primary point-of-contact for IT operations and managed
@@ -166,9 +183,8 @@ const experience = {
             cloud.
           </li>
           <li>
-            Increased labor efficiency by 8% in-store and up to 60% in
-            administrative processes through new software development and
-            implementations through collaboration with internal stakeholders.
+            Implemented practices for data collection and warehousing for all
+            past-and-present organizational data.
           </li>
           <li>
             <span className="italic">Technologies used:</span> Google Cloud,
@@ -320,7 +336,7 @@ function SkillsSection() {
         {techSkills.map((item, idx) => (
           <div
             key={idx}
-            className="flex md:flex-row flex-col md:items-center gap-2 md:gap-4 mb-3 md:mb-2"
+            className="flex md:flex-row flex-col md:items-center gap-2 md:gap-4 mb-3 md:mb-2 print:flex-row print:items-center"
           >
             <div className="text-xs border border-black py-2 rounded-sm w-44 font-mono font-medium flex justify-center">
               {item.tag}

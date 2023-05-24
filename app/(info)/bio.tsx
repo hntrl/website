@@ -50,17 +50,8 @@ export function BioCopy() {
               </div>
               <div className="flex items-center mb-4 p-4 transition transform duration-[50ms] hover:scale-[1.005] bg-white/5 border border-neutral-800 hover:border-neutral-500 rounded-md">
                 <FaDiscord className="w-6 h-6 mr-3" />
-                okayhunter#0007
+                hunt#0007
               </div>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://twitter.com/okayhunter1"
-                className="flex items-center mb-4 p-4 transition transform duration-[50ms] hover:scale-[1.005] bg-white/5 border border-neutral-800 hover:border-neutral-500 rounded-md"
-              >
-                <FaTwitter className="w-6 h-6 mr-3" />
-                @okayhunter1
-              </a>
               <a
                 rel="noopener noreferrer"
                 target="_blank"
