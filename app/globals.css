@@ -29,3 +29,8 @@ body {
   --background-start-rgb: 247, 245, 242;
   --background-end-rgb: 247, 245, 242;
 }
+
+/* .resume li::marker {
+  font-size: 12px;
+  text-align:center;
+} */

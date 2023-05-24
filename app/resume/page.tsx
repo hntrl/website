@@ -29,11 +29,11 @@ export default function ResumePage() {
             </div>
           </div>
           <p className="mb-4">
-            Adaptable software engineer with 4+ years experience providing
-            first-class results that perform. Comprehensive technical experience
-            in full-stack development, problem-solving skills, committment to
-            follow through, and a focused attention to detail. Also well versed
-            in optimizing business procedures, processess, and productivity.
+            Experienced Software Engineer with over 4+ years of comprehensive
+            technical experience in full-stack development. problem-solving
+            skills, committment to follow through, and a focused attention to
+            detail. Also well versed in optimizing business procedures,
+            processess, and productivity.
           </p>
           <Spacer />
         </section>
@@ -128,7 +128,7 @@ const experience = {
       timeframe: "June 2021 - August 2022",
       link: "cubbys.co",
       content: (
-        <ul className="list-disc ml-4 md:ml-0">
+        <ul className="list-disc ml-4 md:ml-0 ">
           <li>
             Implemented practices for data collection and warehousing for all
             past-and-present organizational data.
@@ -143,8 +143,11 @@ const experience = {
             solutions, and other customer facing implements.
           </li>
           <li>
-            Directly oversaw 7 figures in payroll processing for 11+ retail
-            locations and 300+ employees.
+            Directly oversaw $12,000,000+ in payroll processing for 11+ retail
+            locations and 300+ employees. Achieved this by building a data
+            pipeline across multiple platforms that ensured compliance and
+            accuracy, and was directly involved in making sure everyone got paid
+            on time and corerectly.
           </li>
           <li>
             Developed, optimized, and oversaw administrative processes like
@@ -156,8 +159,9 @@ const experience = {
             cloud.
           </li>
           <li>
-            Worked closely with decision-makers to develop software to better
-            suit the needs of the business.
+            Increased labor efficiency by 8% in-store and up to 60% in
+            administrative processes through new software development and
+            implementations through collaboration with internal stakeholders.
           </li>
           <li>
             <span className="italic">Technologies used:</span> Google Cloud,
@@ -227,7 +231,7 @@ function ExperienceSection() {
                   <span>{item.place}</span>/
                   <span className="font-display text-xs">{item.location}</span>
                 </div>
-                <div className="font-display italic text-xs">
+                <div className="font-display italic md:text-xs">
                   {item.timeframe}
                 </div>
               </div>
