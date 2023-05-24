@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { twMerge as cs } from "tailwind-merge";
+
 import { ExternalLink } from "~/components/icons";
 
 export const metadata = {
@@ -10,15 +12,18 @@ export const metadata = {
   },
 };
 
-function Spacer() {
-  return <div className="h-px w-full bg-black mb-6" />;
+function Spacer({ className }: { className?: string }) {
+  return <div className={cs("h-px w-full bg-black mb-6", className)} />;
 }
 
 export default function ResumePage() {
   return (
     <main className="resume min-h-screen">
       <div className="pt-4 px-4 pb-40 max-w-3xl mx-auto">
-        <Link href="/" className="block font-mono text-sm mb-4 hover:underline">
+        <Link
+          href="/"
+          className="block font-mono text-sm mb-4 hover:underline print:hidden"
+        >
           ../
         </Link>
         <section>
@@ -38,10 +43,14 @@ export default function ResumePage() {
           <Spacer />
         </section>
         <SkillsSection />
+        <Spacer />
         <ExperienceSection />
-        <EducationSection />
+        <Spacer className="print:mt-6" />
+        <EducationSection className="print:break-before-page print:mt-4" />
+        <Spacer />
         <AccreditationSection />
-        <p className="font-display text-sm mx-auto italic text-center">
+        <Spacer />
+        <p className="font-display text-sm mx-auto italic text-center print:mt-6">
           References available upon request
         </p>
       </div>
@@ -76,7 +85,6 @@ function AccreditationSection() {
           </div>
         ))}
       </div>
-      <Spacer />
     </section>
   );
 }
@@ -96,9 +104,9 @@ const education = [
   },
 ];
 
-function EducationSection() {
+function EducationSection({ className }: { className?: string }) {
   return (
-    <section>
+    <section className={className}>
       <h2 className="font-display text-xl font-bold mb-4">Education</h2>
       <div className="mb-6">
         {education.map((item, idx) => (
@@ -114,7 +122,6 @@ function EducationSection() {
           </div>
         ))}
       </div>
-      <Spacer />
     </section>
   );
 }
@@ -243,7 +250,7 @@ function ExperienceSection() {
                   className="flex items-center gap-1 hover:underline"
                 >
                   {item.link}
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-4 h-4 print:hidden" />
                 </a>
               </div>
             </div>
@@ -264,7 +271,7 @@ function ExperienceSection() {
                   className="text-xl font-medium leading-5 flex items-center gap-1.5 hover:underline"
                 >
                   {item.title}
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-4 h-4 print:hidden" />
                 </a>
               ) : (
                 <h4 className="text-xl font-medium leading-5">{item.title}</h4>
@@ -277,7 +284,6 @@ function ExperienceSection() {
           </div>
         ))}
       </div>
-      <Spacer />
     </section>
   );
 }
@@ -323,7 +329,6 @@ function SkillsSection() {
           </div>
         ))}
       </div>
-      <Spacer />
     </section>
   );
 }

@@ -30,6 +30,14 @@ body {
   --background-end-rgb: 247, 245, 242;
 }
 
+@media print {
+  .resume {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
 /* .resume li::marker {
   font-size: 12px;
   text-align:center;
