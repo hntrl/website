@@ -16,8 +16,8 @@ const projects = [
   {
     name: "hyper",
     label: null,
-    link: "https://github.com/hntrl/lang",
-    repo: "hntrl/lang",
+    link: "https://github.com/hntrl/hyper",
+    repo: "hntrl/hyper",
     description: "🐸 A backend language and framework for distributed systems",
     language: {
       color: "#0da4e0",
