@@ -86,7 +86,7 @@ export function BioCopy() {
                 principles.
               </p>
               <p className="mb-4">
-                When i'm not at a terminal, you can find me skiing somewhere in
+                When i'm not at a computer, you can find me skiing somewhere in
                 the rockies, spending time with my dog{" "}
                 <GenericLink href="/dog" target="_self">
                   Ozzy
