@@ -50,11 +50,13 @@ export default function ResumePage() {
             </div>
           </div>
           <p className="mb-4">
-            Adaptable software engineer with 4+ years experience providing
-            first-class results that perform. Comprehensive technical experience
-            in full-stack development, problem-solving skills, committment to
-            follow through, and a focused attention to detail. Also well versed
-            in optimizing business procedures, processess, and productivity.
+            Experienced Software Engineer with over 3+ years of comprehensive
+            technical experience in full stack development. Proven ability to
+            leverage knowledge and experience across multiple vendors and
+            ecosystems to provide first-class digital experiences that scale.
+            Well versed in all aspects of the software development cycle, from
+            concept through to development and delivery. Also skilled in
+            optimizing business procedures, processess, and productivity.
           </p>
           <Spacer />
         </section>
