@@ -61,7 +61,7 @@ const tech = [
         My own language that centers around rapid iteration for distributed
         systems. Still a WIP, but am really excited to show what it can do.
         <GenericLink
-          href="https://hntrl.github.io/lang"
+          href="https://hntrl.github.io/hyper"
           className="text-sm font-mono font-semibold ml-1.5"
         >
           check it out
