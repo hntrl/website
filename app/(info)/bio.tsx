@@ -50,7 +50,7 @@ export function BioCopy() {
               </div>
               <div className="flex items-center mb-4 p-4 transition transform duration-[50ms] hover:scale-[1.005] bg-white/5 border border-neutral-800 hover:border-neutral-500 rounded-md">
                 <FaDiscord className="w-6 h-6 mr-3" />
-                hunt#0007
+                hntrl
               </div>
               <a
                 rel="noopener noreferrer"
