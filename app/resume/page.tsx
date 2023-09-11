@@ -56,7 +56,7 @@ export default function ResumePage() {
             ecosystems to provide first-class digital experiences that scale.
             Well versed in all aspects of the software development cycle, from
             concept through to development and delivery. Also skilled in
-            optimizing business procedures, processess, and productivity.
+            optimizing business procedures, processes, and productivity.
           </p>
           <Spacer />
         </section>
