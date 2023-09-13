@@ -147,6 +147,33 @@ function EducationSection({ className }: { className?: string }) {
 const experience = {
   professional: [
     {
+      title: "Junior Software Developer",
+      place: "Outsmartly",
+      location: "Remote",
+      timeframe: "June 2023 - Present",
+      link: "outsmartly.com",
+      content: (
+        <ul className="list-disc ml-4 md:ml-0">
+          <li>
+            Worked closely with 9 figure ecommerce brands to instill practices
+            of conversion rate optimization and data driven business decisions.
+          </li>
+          <li>
+            Ensured quality deliverables for new and existing clients by working
+            closely with internal stakeholders and external vendors.
+          </li>
+          <li>
+            Involved in the development of a product offering that centers
+            around experimentation and lightning-fast web performance.
+          </li>
+          <li>
+            <span className="italic">Technologies used:</span> TypeScript,
+            BigQuery, Cloudflare, AWS, NextJS, React, Google Cloud
+          </li>
+        </ul>
+      ),
+    },
+    {
       title: "Principal BI Developer",
       place: "Cubby's",
       location: "American Fork, UT",
@@ -160,7 +187,7 @@ const experience = {
             solutions, and other customer facing implements.
           </li>
           <li>
-            Directly oversaw $12,000,000+ in payroll processing for 11+ retail
+            Directly oversaw $12m+ in payroll processing for 11+ retail
             locations and 300+ employees. Achieved this by building a data
             pipeline across multiple platforms that ensured compliance and
             accuracy, and was directly involved in making sure everyone got paid
@@ -172,17 +199,8 @@ const experience = {
             implementations through collaboration with internal stakeholders.
           </li>
           <li>
-            Developed, optimized, and oversaw administrative processes like
-            sales reporting, asset management, and payroll.
-          </li>
-          <li>
             Became the pointman for answering all data-intensive questions that
             arised from senior management and the c-suite.
-          </li>
-          <li>
-            Became a primary point-of-contact for IT operations and managed
-            teams to improve networks and tech stacks both in store and in the
-            cloud.
           </li>
           <li>
             Implemented practices for data collection and warehousing for all
