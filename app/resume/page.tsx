@@ -60,7 +60,7 @@ export default function ResumePage() {
           </p>
           <Spacer />
         </section>
-        <EducationSection className="print:break-before-page print:mt-4" />
+        <EducationSection className="print:mt-4" />
         <Spacer />
         <SkillsSection />
         <Spacer />
