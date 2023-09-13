@@ -321,7 +321,7 @@ const techSkills = [
   },
   {
     tag: "Tooling/Software",
-    details: "Docker, Git, Figma, Grafana, Adobe Suite, DOMO",
+    details: "Docker, Git, Figma, Grafana, Adobe Suite, DOMO, Stripe",
   },
   {
     tag: "Services",
