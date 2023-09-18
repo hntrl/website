@@ -64,7 +64,7 @@ export default function ResumePage() {
         <Spacer />
         <ExperienceSection />
         <Spacer className="print:mt-6" />
-        <EducationSection className="print:break-before-page print:mt-4" />
+        <EducationSection className="print:mt-4" />
         <Spacer />
         <AccreditationSection />
         <Spacer />
