@@ -91,7 +91,7 @@ export function BioCopy() {
                 <GenericLink href="/dog" target="_self">
                   Ozzy
                 </GenericLink>
-                , or (probably) losing rank in Valorant.
+                , or rock climbing.
               </p>
               <div className="font-mono uppercase transition text-zinc-400 flex gap-6">
                 <div
