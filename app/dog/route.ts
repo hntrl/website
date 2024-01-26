@@ -1,3 +1,4 @@
+import sharp from "sharp";
 import path from "path";
 import fs from "fs";
 
@@ -11,12 +12,14 @@ export async function GET() {
     imagePath,
     images[Math.floor(Math.random() * images.length)]
   );
-  let stat = fs.statSync(random_image);
-  let buffer = fs.readFileSync(random_image);
+  let buffer = await sharp(random_image)
+    .resize({ height: 900 })
+    .withMetadata()
+    .toBuffer();
   return new Response(buffer, {
     headers: {
       "Content-Type": "image/jpeg",
-      "Content-Size": stat.size.toString(),
+      "Content-Size": buffer.length.toString(),
     },
   });
 }
