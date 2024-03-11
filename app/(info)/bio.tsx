@@ -1,6 +1,6 @@
 "use client";
 
-import { TbMail } from "react-icons/tb";
+import { TbBrandX, TbMail, TbX } from "react-icons/tb";
 import { FaArrowLeft, FaDiscord, FaTwitter } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -55,6 +55,15 @@ export function BioCopy() {
               <a
                 rel="noopener noreferrer"
                 target="_blank"
+                href="https://twitter.com/huntlovell"
+                className="flex items-center mb-4 p-4 transition transform duration-[50ms] hover:scale-[1.005] bg-white/5 border border-neutral-800 hover:border-neutral-500 rounded-md"
+              >
+                <TbBrandX className="w-6 h-6 mr-3" />
+                @huntlovell
+              </a>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
                 href="mailto:hunter@hntrl.io"
                 className="flex items-center mb-4 p-4 transition transform duration-[50ms] hover:scale-[1.005] bg-white/5 border border-neutral-800 hover:border-neutral-500 rounded-md"
               >
@@ -79,19 +88,13 @@ export function BioCopy() {
                 it. I'm passionate about building cool digital experiences and
                 anything esports.
               </p>
-              <p className="mb-2">
-                I'm currently working on{" "}
-                <span className="font-bold">hyper</span>, a backend framework
-                built for interoperability and scale based on reactive
-                principles.
-              </p>
               <p className="mb-4">
                 When i'm not at a computer, you can find me skiing somewhere in
-                the rockies, spending time with my dog{" "}
+                the rockies, rock climbing, or spending time with my dog{" "}
                 <GenericLink href="/dog" target="_self">
                   Ozzy
                 </GenericLink>
-                , or rock climbing.
+                .
               </p>
               <div className="font-mono uppercase transition text-zinc-400 flex gap-6">
                 <div
