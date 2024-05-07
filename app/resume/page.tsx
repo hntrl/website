@@ -50,7 +50,7 @@ export default function ResumePage() {
             </div>
           </div>
           <p className="mb-4">
-            Experienced Software Engineer with over 3+ years of comprehensive
+            Experienced Software Engineer with 4+ years of comprehensive
             technical experience in full stack development. Proven ability to
             leverage knowledge and experience across multiple vendors and
             ecosystems to provide first-class digital experiences that scale.
@@ -111,8 +111,8 @@ const education = [
   {
     school: "Utah State University",
     location: "Logan, UT",
-    certification: "B.S. Information Systems",
-    desc: "August 2022 - Expected May 2025",
+    certification: "B.S. Information Systems, Data Engineering",
+    desc: "August 2022 - Expected Dec 2024",
   },
   {
     school: "Provo High School",
@@ -217,7 +217,7 @@ const experience = {
   other: [
     {
       title: "mystickerspace.com",
-      link: "https://mystickerspace.com",
+      link: null,
       role: "Lead Developer & Architect",
       tag: "Client project",
       content: (
