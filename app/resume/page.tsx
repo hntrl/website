@@ -150,7 +150,7 @@ const experience = {
       title: "Junior Software Developer",
       place: "Outsmartly",
       location: "Remote",
-      timeframe: "June 2023 - March 2023",
+      timeframe: "June 2023 - March 2024",
       link: "outsmartly.com",
       content: (
         <ul className="list-disc ml-4 md:ml-0">
