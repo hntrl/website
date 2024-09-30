@@ -20,7 +20,7 @@ function Spacer({ className }: { className?: string }) {
 
 export default function ResumePage() {
   return (
-    <main className="resume min-h-screen">
+    <main className="resume print:bg-transparent min-h-screen">
       <div className="pt-4 px-4 pb-40 max-w-3xl mx-auto">
         <Link
           href="/"
@@ -36,7 +36,7 @@ export default function ResumePage() {
                   Hunter Lovell
                 </h1>
                 <div className="text-2xl hidden print:block">
-                  /<span className="ml-2">Fullstack Software Engineer</span>
+                  /<span className="ml-2">Software Engineer</span>
                 </div>
               </div>
               <div className="flex items-center gap-2 text-xl">
@@ -50,12 +50,12 @@ export default function ResumePage() {
             </div>
           </div>
           <p className="mb-4">
-            Experienced Software Engineer with 4+ years of comprehensive
-            technical experience in full stack development. Proven ability to
-            leverage knowledge and experience across multiple vendors and
-            ecosystems to provide first-class digital experiences that scale.
-            Well versed in all aspects of the software development cycle, from
-            concept through to development and delivery. Also skilled in
+            Software Engineer with 4+ years of comprehensive technical
+            experience across multiple disciplines including frontend, backend,
+            devops, and data engineering. Proven ability to navigate diverse
+            vendor ecosystems to provide first-class digital experiences that
+            scale. Well versed in all aspects of the software development cycle,
+            from concept through to development and delivery. Also skilled in
             optimizing business procedures, processes, and productivity.
           </p>
           <Spacer />
@@ -63,8 +63,8 @@ export default function ResumePage() {
         <SkillsSection />
         <Spacer />
         <ExperienceSection />
-        <Spacer className="print:mt-6" />
-        <EducationSection className="print:mt-4" />
+        <Spacer className="break-before-page" />
+        <EducationSection />
         <Spacer />
         <AccreditationSection />
         <Spacer />
@@ -180,7 +180,7 @@ const experience = {
       timeframe: "June 2021 - August 2022",
       link: "cubbys.co",
       content: (
-        <ul className="list-disc ml-4 md:ml-0 ">
+        <ul className="list-disc ml-4 md:ml-0">
           <li>
             Conducted several platform migrations for critical business services
             including payroll providers, reporting workflows, point of sale
@@ -216,7 +216,7 @@ const experience = {
   ],
   other: [
     {
-      title: "mystickerspace.com",
+      title: "Stickerspace",
       link: null,
       role: "Lead Developer & Architect",
       tag: "Client project",
@@ -261,12 +261,12 @@ const experience = {
 function ExperienceSection() {
   return (
     <section>
-      <h2 className="font-display text-xl font-bold mb-6">
+      <h2 className="font-display text-xl font-bold mb-4">
         Professional Experience
       </h2>
       <div className="mb-6">
         {experience.professional.map((item, idx) => (
-          <div key={idx} className="mb-4">
+          <div key={idx} className="mb-4 break-inside-avoid">
             <div className="md:flex justify-between items-center mb-2">
               <div>
                 <h4 className="text-xl font-medium leading-5">{item.title}</h4>
@@ -294,10 +294,10 @@ function ExperienceSection() {
           </div>
         ))}
       </div>
-      <h3 className="text-xl font-display font-bold mb-4">Other Projects</h3>
+      <h3 className="text-xl font-display font-bold mb-4">Other Experience</h3>
       <div className="mb-6">
         {experience.other.map((item, idx) => (
-          <div key={idx} className="mb-4">
+          <div key={idx} className="mb-4 break-inside-avoid">
             <div className="mb-2">
               {item.link ? (
                 <a
@@ -331,11 +331,11 @@ const techSkills = [
   },
   {
     tag: "Frameworks/Libraries",
-    details: "Next.JS, React, Tailwind, Kubernetes, GraphQL",
+    details: "Next.JS, React, Astro, Pandas, PyCaret",
   },
   {
     tag: "Databases/Datastores",
-    details: "MongoDB, Redis, MySQL, DynamoDB, Prometheus, Neo4j",
+    details: "MongoDB, Redis, MySQL, DynamoDB, Prometheus, Snowflake, Neo4j",
   },
   {
     tag: "Tooling/Software",
@@ -344,7 +344,7 @@ const techSkills = [
   {
     tag: "Services",
     details:
-      "Github, Vercel, Stripe, AWS (Certified), Google Cloud, DigitalOcean",
+      "Github, Cloudflare, Stripe, AWS (Certified), Google Cloud, DigitalOcean",
   },
 ];
 

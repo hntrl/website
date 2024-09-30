@@ -31,6 +31,9 @@ body {
 }
 
 @media print {
+  body {
+    background: rgb(var(--background-start-rgb));
+  }
   .resume {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 255, 255, 255;
