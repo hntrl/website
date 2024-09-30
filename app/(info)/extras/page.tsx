@@ -5,7 +5,6 @@ import Image from "next/image";
 import { GenericLink, Link } from "~/components/link";
 import { ChessRapid, LoadingIcon } from "~/components/icons";
 
-import { getValorantRank } from "~/app/api/spotify/getValorantRank";
 import fetchRapidStats from "~/app/api/spotify/getRapidStats";
 import getCurrentTrack from "~/app/api/spotify/getCurrentTrack";
 
@@ -55,26 +54,6 @@ async function RapidText() {
   );
 }
 
-async function RankText() {
-  const rank = await getValorantRank();
-  return (
-    <GenericLink
-      href={`https://tracker.gg/valorant/profile/riot/${encodeURIComponent(
-        process.env.VAL_USERNAME || ""
-      )}/overview`}
-      className="inline-flex align-top gap-1 items-center font-semibold text-white"
-    >
-      <Image
-        src={rank.images.large}
-        alt={rank.currenttierpatched}
-        width={20}
-        height={20}
-      />
-      {rank.currenttierpatched}
-    </GenericLink>
-  );
-}
-
 export default async function ExtrasPage() {
   return (
     <div className="mb-12">
@@ -99,14 +78,6 @@ export default async function ExtrasPage() {
       </li>
       <div className="h-px w-full my-4 bg-gray-100/30" />
       <div className="mt-6">
-        <div className="mb-3.5">
-          currently{" "}
-          <Suspense fallback={<LoadingIcon className="inline" />}>
-            {/* @ts-expect-error Async Server Component */}
-            <RankText />
-          </Suspense>{" "}
-          in Valorant
-        </div>
         <div className="mb-2">
           currently rated{" "}
           <Suspense fallback={<LoadingIcon className="inline" />}>
