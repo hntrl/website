@@ -12,11 +12,7 @@ const { title, description, canonicalUrl, type, publishDate } = Astro.props;
 
 <title>{title}</title>
 {description && <meta name="description" content={description} />}
-{
-  publishDate && (
-    <meta property="article:published_time" content={publishDate} />
-  )
-}
+{publishDate && <meta property="article:published_time" content={publishDate} />}
 
 <link rel="canonical" href={canonicalUrl} />
 

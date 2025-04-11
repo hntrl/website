@@ -6,18 +6,12 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function StargazersCount({
-  owner = "hntrl",
-  repo,
-  children,
-}: Props) {
+export default function StargazersCount({ owner = "hntrl", repo, children }: Props) {
   const [stargazersCount, setStargazersCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        `https://api.github.com/repos/${owner}/${repo}`
-      );
+      const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
       const data = await response.json();
       setStargazersCount(data.stargazers_count);
     };

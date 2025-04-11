@@ -6,4 +6,3 @@ draft: true
 ---
 
 # How (not) to write unit tests
-

@@ -12,10 +12,7 @@ interface Props {
 const { owner = "hntrl", repo, title, showStarCount = true } = Astro.props;
 ---
 
-<a
-  href={`https://github.com/${owner}/${repo}`}
-  class="flex flex-col gap-2 group py-4 rounded"
->
+<a href={`https://github.com/${owner}/${repo}`} class="flex flex-col gap-2 group py-4 rounded">
   <div class="flex items-center gap-2">
     <div
       class="text-lg flex items-center gap-1 underline group-hover:decoration-current italic underline-offset-2 decoration-zinc-600 transition"
