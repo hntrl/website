@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl: string;
+  type: "website" | "article";
+  publishDate?: string;
+}
+
+const { title, description, canonicalUrl, type, publishDate } = Astro.props;
+---
+
+<title>{title}</title>
+{description && <meta name="description" content={description} />}
+{
+  publishDate && (
+    <meta property="article:published_time" content={publishDate} />
+  )
+}
+
+<link rel="canonical" href={canonicalUrl} />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:type" content={type} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />

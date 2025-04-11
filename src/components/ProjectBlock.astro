@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+import StarCount from "./StarCount.tsx";
+
+interface Props {
+  owner?: string;
+  repo: string;
+  title?: string;
+  showStarCount?: boolean;
+}
+
+const { owner = "hntrl", repo, title, showStarCount = true } = Astro.props;
+---
+
+<a
+  href={`https://github.com/${owner}/${repo}`}
+  class="flex flex-col gap-2 group py-4 rounded"
+>
+  <div class="flex items-center gap-2">
+    <div
+      class="text-lg flex items-center gap-1 underline group-hover:decoration-current italic underline-offset-2 decoration-zinc-600 transition"
+    >
+      {title ?? repo}
+    </div>
+    {
+      showStarCount && (
+        <StarCount client:load owner={owner} repo={repo}>
+          <Icon name="octicon:star-fill-16" class="text-yellow-500" />
+        </StarCount>
+      )
+    }
+  </div>
+  <p class="text-xs md:text-sm lg:text-base text-zinc-400">
+    <slot />
+  </p>
+</a>

@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"blog">["data"];
+const { title, description, publishDate, tags } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: description,
+  keywords: tags,
+  author: {
+    "@type": "Person",
+    name: "Hunter Lovell",
+    url: Astro.site,
+  },
+  /* the schema expects Date or DateTime using ISO 8601 format. For Date that is yyyy-MM-dd */
+  datePublished: publishDate.substring(0, 10),
+};
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(schema)}
+/>

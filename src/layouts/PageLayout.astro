@@ -1,0 +1,26 @@
+---
+import { Icon } from "astro-icon/components";
+
+import Layout from "./Layout.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <a
+    class="pt-5 pb-3 border-b border-zinc-600 text-xs md:text-sm lg:text-base flex justify-between items-center text-zinc-400 hover:text-zinc-200 transition"
+    href="/"
+  >
+    <div class="flex items-center gap-1">
+      <Icon name="octicon:arrow-left-16" />
+      <span>home</span>
+    </div>
+    <div class="alt-text">Hunter Lovell</div>
+  </a>
+  <slot />
+</Layout>

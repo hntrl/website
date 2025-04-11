@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Software engineer building refined experiences on the web.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <slot name="head" />
+  </head>
+  <body class="mx-auto max-w-lg md:max-w-xl lg:max-w-2xl mb-64 px-6">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import "tailwindcss";
+  @plugin "@tailwindcss/typography";
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-style: normal;
+  }
+  .alt-text {
+    font-family: "JetBrains Mono", monospace;
+  }
+  body {
+    color: white;
+    background: #050505;
+  }
+</style>

@@ -1,0 +1,126 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+
+import Layout from "../layouts/Layout.astro";
+import ProjectBlock from "../components/ProjectBlock.astro";
+
+const blogEntries = await getCollection("blog");
+const availableBlogEntries = blogEntries.filter((entry) => {
+  return import.meta.env.PROD ? !entry.data?.draft : true;
+});
+
+availableBlogEntries.sort((a, b) =>
+  a.data.publishDate < b.data.publishDate
+    ? 1
+    : a.data.publishDate > b.data.publishDate
+      ? -1
+      : 0
+);
+---
+
+<Layout title="Hunter Lovell">
+  <main class="mt-16 md:text-base lg:text-lg text-zinc-300">
+    <div class="flex items-center justify-between">
+      <h2 class="text-3xl text-white font-bold">Hunter Lovell</h2>
+      <div class="flex items-center gap-3">
+        <a href="https://x.com/hntrl">
+          <Icon name="x" class="text-white" />
+        </a>
+        <a href="https://github.com/hntrl">
+          <Icon name="octicon:mark-github-24" class="text-white" />
+        </a>
+        <a href="/content-list"> 💎 </a>
+      </div>
+    </div>
+    <section class="mt-8">
+      <p>
+        Hey, I'm Hunter—a software engineer building things before robots make
+        me irrelevant.
+      </p>
+    </section>
+    <section class="mt-4">
+      <p>
+        I'm interested in reactive systems, distributed computing, and building
+        products that help developers build better products. I also know way too
+        much about TypeScript and perf tools.
+      </p>
+    </section>
+    <section class="mt-4">
+      <p>
+        If you want to get in touch, find me on <a
+          class="underline hover:decoration-current underline-offset-2 decoration-zinc-600 transition"
+          href="https://x.com/hntrl">X/Twitter</a
+        > or send a note to
+        <br />
+        <p>
+          hunter <span class="text-zinc-400">at</span> hntrl <span
+            class="text-zinc-400">dot</span
+          > io
+        </p>
+      </p>
+    </section>
+
+    { availableBlogEntries.length > 0 && (
+      <div
+          class="-mx-3 px-3 pb-2 text-zinc-400 text-xs md:text-sm lg:text-base mt-12"
+        >
+        Thoughts
+      </div>
+      <section class="flex flex-col">
+        {
+          availableBlogEntries.map((entry) => {
+            return (
+              <a
+                class="-mx-3 -mt-px px-3 py-3 group border-y border-zinc-800 hover:bg-zinc-900 transition flex items-center justify-between relative"
+                href={`/posts/${entry.slug}`}
+              >
+                <div>{entry.data.title}</div>
+
+                <div class="flex items-center gap-2 text-zinc-500 group-hover:text-zinc-300 transition">
+                  <time
+                    class="alt-text text-xs md:text-sm lg:text-base hidden md:block"
+                    datetime={entry.data.publishDate}
+                  >
+                    {new Date(entry.data.publishDate).toLocaleDateString(
+                      "en-US",
+                      {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      }
+                    )}
+                  </time>
+                  <Icon class="text-lg" name="octicon:arrow-up-right-16" />
+                </div>
+              </a>
+            );
+          })
+        }
+      </section>
+    )}
+
+    <div class="text-zinc-400 text-xs md:text-sm lg:text-base mt-12">
+      Projects
+    </div>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+      <ProjectBlock repo="eventkit">
+        A TypeScript library for composing and observing asynchronous streams of
+        data. Primarily used to build event systems where JS is used on the
+        server.
+      </ProjectBlock>
+      <ProjectBlock repo="hyper" showStarCount={false}
+        >An (inactive) language project made for expressing services and
+        business logic using domain driven design (DDD).</ProjectBlock
+      >
+      <ProjectBlock repo="escf" showStarCount={false}>
+        A framework for building event-sourced systems on Cloudflare Workers
+        (stands for event-sourced cloudflare).
+      </ProjectBlock>
+      <ProjectBlock repo="fish-react-him">
+        A discord bot to fish react every person in the server. (my most
+        important project to date)
+      </ProjectBlock>
+    </section>
+  </main>
+</Layout>
