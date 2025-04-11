@@ -34,11 +34,7 @@ const formatDate = (date: string) =>
   <header class="py-8 mb-8 border-b border-zinc-600">
     {
       post.data.image && (
-        <img
-          src="/assets/blog/websocket-hero.png"
-          alt={post.data.title}
-          class="w-full h-64 object-cover mb-6 rounded-lg mb-12"
-        />
+        <img src={post.data.image} alt={post.data.title} class="w-full h-64 object-cover mb-6 rounded-lg mb-12" />
       )
     }
     <h1 class="text-3xl md:text-4xl mb-6 lg:text-5xl font-bold">
