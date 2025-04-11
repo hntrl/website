@@ -2,7 +2,7 @@
 title: "You might not need Websockets"
 description: "Websockets are powerful tools that have become a fan-favorite for building realtime applications, but you might be using them for all the wrong reasons. Let's explore the pitfalls of websockets and how we can use plain old HTTP to get the same job done."
 image: "/assets/blog/websocket-hero.png"
-publishDate: "2025-04-12"
+publishDate: "2025-04-11"
 ---
 
 ## What's a WebSocket?
