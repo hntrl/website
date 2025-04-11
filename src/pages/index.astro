@@ -16,7 +16,7 @@ availableBlogEntries.sort((a, b) =>
 ---
 
 <Layout title="Hunter Lovell">
-  <main class="mt-16 md:text-base lg:text-lg text-zinc-300">
+  <main class="pt-16 md:text-base lg:text-lg text-zinc-300">
     <div class="flex items-center justify-between">
       <h2 class="text-3xl text-white font-bold">Hunter Lovell</h2>
       <div class="flex items-center gap-3">
@@ -60,7 +60,7 @@ availableBlogEntries.sort((a, b) =>
               return (
                 <a
                   class="-mx-3 -mt-px px-3 py-3 group border-y border-zinc-800 hover:bg-zinc-900 transition flex items-center justify-between relative"
-                  href={`/posts/${entry.id}`}
+                  href={`/posts/${entry.slug}`}
                 >
                   <div>{entry.data.title}</div>
 
@@ -95,12 +95,12 @@ availableBlogEntries.sort((a, b) =>
         >An (inactive) language project made for expressing services and business logic using domain driven design
         (DDD).</ProjectBlock
       >
-      <ProjectBlock repo="escf" showStarCount={false}>
+      <!-- <ProjectBlock repo="escf" showStarCount={false}>
         A framework for building event-sourced systems on Cloudflare Workers (stands for event-sourced cloudflare).
       </ProjectBlock>
       <ProjectBlock repo="fish-react-him">
         A discord bot to fish react every person in the server. (my most important project to date)
-      </ProjectBlock>
+      </ProjectBlock> -->
     </section>
   </main>
 </Layout>

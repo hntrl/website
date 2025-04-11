@@ -24,7 +24,7 @@ const { title, description = "Software engineer building refined experiences on 
     />
     <slot name="head" />
   </head>
-  <body class="mx-auto max-w-lg md:max-w-xl lg:max-w-2xl mb-64 px-6">
+  <body class="min-h-screen mx-auto max-w-lg md:max-w-xl lg:max-w-2xl px-6">
     <slot />
   </body>
 </html>
@@ -32,6 +32,9 @@ const { title, description = "Software engineer building refined experiences on 
 <style is:global>
   @import "tailwindcss";
   @plugin "@tailwindcss/typography";
+  @theme {
+    --color-background: #050505;
+  }
   :root {
     color-scheme: dark;
   }
@@ -44,6 +47,6 @@ const { title, description = "Software engineer building refined experiences on 
   }
   body {
     color: white;
-    background: #050505;
+    background: var(--color-background);
   }
 </style>
