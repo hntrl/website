@@ -36,6 +36,7 @@ const formatDate = (date: string) =>
     slot="head"
     title={post.data.title}
     description={post.data.description}
+    tags={post.data.tags}
     canonicalUrl={`${import.meta.env.SITE}/posts/${post.slug}/`}
     publishDate={post.data.publishDate}
     type="article"
