@@ -1,6 +1,4 @@
 ---
-import { type ImageMetadata } from "astro";
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 import Metadata from "../components/Metadata.astro";
@@ -12,15 +10,6 @@ interface Props {
 }
 
 const { post } = Astro.props;
-
-let imageMetadata: ImageMetadata | null = null;
-if (post.data.image) {
-  const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/blog/*.{jpeg,jpg,png,gif}");
-  if (!images[post.data.image]) {
-    throw new Error(`${post.data.image} does not exist in glob: "src/assets/blog/*.{jpeg,jpg,png,gif}`);
-  }
-  imageMetadata = (await images[post.data.image]()).default;
-}
 
 const formatDate = (date: string) =>
   new Date(date).toLocaleDateString("en-US", {
@@ -37,14 +26,19 @@ const formatDate = (date: string) =>
     title={post.data.title}
     description={post.data.description}
     tags={post.data.tags}
+    image={`${import.meta.env.SITE}/posts/${post.slug}/og.png`}
     canonicalUrl={`${import.meta.env.SITE}/posts/${post.slug}/`}
     publishDate={post.data.publishDate}
     type="article"
   />
   <header class="py-8 mb-8 border-b border-zinc-600">
     {
-      imageMetadata && (
-        <Image src={imageMetadata} alt={post.data.title} class="w-full h-64 object-cover mb-6 rounded-lg mb-12" />
+      post.data.image && (
+        <img
+          src="/assets/blog/websocket-hero.png"
+          alt={post.data.title}
+          class="w-full h-64 object-cover mb-6 rounded-lg mb-12"
+        />
       )
     }
     <h1 class="text-3xl md:text-4xl mb-6 lg:text-5xl font-bold">

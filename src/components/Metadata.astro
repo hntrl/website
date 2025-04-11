@@ -2,13 +2,14 @@
 interface Props {
   title: string;
   description?: string;
+  image?: string;
   canonicalUrl: string;
   tags?: string[];
   type: "website" | "article";
   publishDate?: string;
 }
 
-const { title, description, canonicalUrl, type, publishDate, tags } = Astro.props;
+const { title, description, image, canonicalUrl, tags, type, publishDate } = Astro.props;
 ---
 
 <title>{title}</title>
@@ -22,8 +23,10 @@ const { title, description, canonicalUrl, type, publishDate, tags } = Astro.prop
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:type" content={type} />
+{image && <meta property="og:image" content={image} />}
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:creator" content="@huntlovell" />
 <meta property="twitter:description" content={description} />
+{image && <meta property="twitter:image" content={image} />}
