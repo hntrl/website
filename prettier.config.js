@@ -5,7 +5,7 @@ export default {
   bracketSpacing: true,
   jsxBracketSameLine: false,
   printWidth: 120,
-  tabWidth: 4,
+  tabWidth: 2,
   overrides: [
     {
       files: "*.astro",
