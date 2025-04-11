@@ -26,7 +26,7 @@ const formatDate = (date: string) =>
     title={post.data.title}
     description={post.data.description}
     tags={post.data.tags}
-    image={`${import.meta.env.SITE}/posts/${post.slug}/og.png`}
+    image={post.data.image ? `${import.meta.env.SITE}${post.data.image}` : undefined}
     canonicalUrl={`${import.meta.env.SITE}/posts/${post.slug}/`}
     publishDate={post.data.publishDate}
     type="article"
