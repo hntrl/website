@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import Metadata from "../components/Metadata.astro";
 import PageLayout from "./PageLayout.astro";
 import BlogPostLD from "../components/BlogPostLD.astro";
+import ViewCount from "../components/ViewCount.tsx";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -40,8 +41,9 @@ const formatDate = (date: string) =>
     <h1 class="text-3xl md:text-4xl mb-6 lg:text-5xl font-bold">
       {post.data.title}
     </h1>
-    <div class="alt-text mb-4 text-zinc-400 text-xs md:text-sm lg:text-base">
+    <div class="alt-text flex items-center gap-2 mb-4 text-zinc-400 text-xs md:text-sm lg:text-base">
       {formatDate(post.data.publishDate)}
+      <ViewCount client:load path={`/posts/${post.slug}`}> &middot; </ViewCount>
     </div>
     <div class="text-zinc-400 text-sm md:text-base lg:text-lg">
       {post.data.description}
