@@ -3,6 +3,7 @@ title: "You might not need Websockets"
 description: "Websockets are powerful tools that have become a fan-favorite for building realtime applications, but you might be using them for all the wrong reasons. Let's explore the pitfalls of websockets and how we can use plain old HTTP to get the same job done."
 image: "/assets/blog/websocket-hero.png"
 publishDate: "2025-04-11"
+modifiedDate: "2025-04-13"
 ---
 
 ## What's a WebSocket?
@@ -49,7 +50,7 @@ This becomes even more awkward because now you have to keep track of every messa
 * What if you never receive a response message on the socket for some reason?
 * What if you're dealing with a huge number of concurrent requests?
 
-It creates too many unknowns and complexity for something that should be simple. If you're dealing with messages where you need to know if they were received or not, you're better off with using a more transactional protocol like HTTP to represent the sending side of the socket.
+It creates too many unknowns and complexity for something that should be simple. If you're dealing with messages where you need to know if they were received or not, you're better off with using a more transactional protocol like REST to represent the sending side of the socket.
 
 ```
 ( < > ) = HTTP
@@ -265,13 +266,15 @@ function nextCounterValue(command) {
   return next;
 }
 
+function processCommand(command) {
+  const next = nextCounterValue(command);
+  stateUpdates$.push(next);
+}
+
 app.post("/increment", async (req, res) => {
   try {
     const { value } = await req.json();
-    const next = nextCounterValue(
-      { type: "increment", amount: value }
-    );
-    stateUpdates$.push(next);
+    processCommand({ type: "increment", amount: value });
     return new Response("OK", 200);
   } catch (error) {
     return new Response(error.message, 400);
@@ -281,10 +284,7 @@ app.post("/increment", async (req, res) => {
 app.post("/decrement", async (req, res) => {
   try {
     const { value } = await req.json();
-    const next = nextCounterValue(
-      { type: "decrement", amount: value }
-    );
-    stateUpdates$.push(next);
+    processCommand({ type: "decrement", amount: value });
     return new Response("OK", 200);
   } catch (error) {
     return new Response(error.message, 400);
@@ -312,9 +312,9 @@ counter$
   .subscribe(updateUI);
 ```
 
-I learned about the capabilities of the Stream API while building it and think it's a really good candidate for your next real-time/event-based application. If you say otherwise, please [open an issue](https://github.com/hntrl/eventkit/issues) and tell me why.
-
 I wouldn't be a good project maintainer if I didn't tell you to at least go [check it out](https://github.com/hntrl/eventkit?utm_source=hntrl&utm_campaign=ydnw). We also wrote a separate [HTTP Streaming](https://hntrl.github.io/eventkit/guide/examples/http-streaming?utm_source=hntrl&utm_campaign=ydnw) guide that goes a little bit deeper into this topic in case you're interested.
+
+I learned about the capabilities of the Stream API while building it and think it's a really good candidate for your next real-time/event-based application. If you say otherwise, please [open an issue](https://github.com/hntrl/eventkit/issues) and tell me why.
 
 ---
 
